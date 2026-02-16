@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        default value of title if not overridden
+        {% endblock %} #this block can be overridden by child templates to provide a specific title for each page
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        this is our navabar
+    </nav>
+    {% block content %}default{% endblock %}
+    
+</body>
+</html>
+
+#this file is the base template that defines the overall structure of the web pages in the Django project. It includes a title block that can be overridden by child templates to provide specific titles for each page, and a content block that can also be overridden to provide specific content for each page. The static tag is used to link to a CSS file for styling the pages.
