@@ -38,7 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chai',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
 ]
+
+# manual configuration for tailwind css
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = ['127.0.0.1:8000']
+
+# this is the path to the npm executable on your system. Tailwind CSS uses npm to manage its dependencies and build process, so you need to specify the correct path to npm for it to work properly.
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoProject.urls'

@@ -23,4 +23,6 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('contact/', views.contact, name="contact"),
     path('chai/', include('chai.urls')), #koi bhi agr /chai url hit krega then ye control transfer chai app ko , 
+    
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
