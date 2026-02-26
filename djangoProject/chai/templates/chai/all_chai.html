@@ -5,6 +5,31 @@
 Chaipage
 {% endblock %} 
 
+
+
+    
+
+
+
+
 {% block content %}
-<h1>All chai page</h1>
+    <h1>All chai page</h1>
+    <div class='grid grid-cols-3 gap-4 m-4'>
+        {% for chai in chais  %}
+        <div class='bg-blue-600 rounded-[5px] shadow-md p-4'>
+            
+            <img src="{{chai.image.url}}" alt="" class='rounded-[5px] w-full h-30 object-cover'>
+            <h3 class='font-extrabold italic text-yellow-300'>{{chai.name}}</h3>
+            <a href="{% url 'chai_detail' chai.id %}">
+                <button
+                 type="button"
+                 class='bg-orange-400 text-blue-800 font-bold py-2 px-4 rounded-[5px] mt-2 w-full'>
+                    {{chai.type}}- {{chai.id}}
+                </button>
+            </a>
+            <h3 class='font-extrabold italic text-yellow-300'>{{chai.pricing}}</h3>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
+

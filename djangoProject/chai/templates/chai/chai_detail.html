@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+ #this line indicates that this template extends the layout.html template, which means it will inherit the structure and content defined in layout.html
+
+{% block title %}
+Chai detail page
+{% endblock %} 
+
+
+
+
+
+
+{% block content %}
+    <h1>chai detail page</h1>
+
+    <h3>{{chai.name}}</h3>
+    <h3>{{chai.description}}</h3>
+    <h3>{{chai.pricing}}</h3>
+
+    
+{% endblock %}
+
