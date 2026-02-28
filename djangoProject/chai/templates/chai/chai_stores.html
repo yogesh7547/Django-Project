@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+ #this line indicates that this template extends the layout.html template, which means it will inherit the structure and content defined in layout.html
+
+{% block title %}
+Chai store page
+{% endblock %} 
+
+
+
+{% block content %}
+    <h1>test content for forms</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type='submit' class='border-2 border-white'>search store</button>
+    </form>
+
+    {%if stores%}
+    <h2>stores available</h2>
+
+    <ul>
+        {% for store in stores  %}
+          <li>{{store.name}}-{{store.location}}</li>
+        {% endfor %}
+    </ul>
+
+    {%endif%}
+    
+{% endblock %}
+
